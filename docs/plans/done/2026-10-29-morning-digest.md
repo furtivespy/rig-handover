@@ -1,8 +1,9 @@
 ---
 plan: morning-digest
-status: ready
+status: done
 owner: rook
 opened: 2026-10-29
+closed: 2026-10-29
 ---
 
 # Morning digest
@@ -77,3 +78,19 @@ page again with `LANE_MARKER` unset (the banner reads "no marker set") and uploa
 link. Move this plan to `docs/plans/done/` with its issue list.
 
 Done when: the preview link no longer shows the lane marker.
+
+## Issues
+
+| # | Issue | Blocked by | Worker | Closed |
+|---|-------|-----------|--------|--------|
+| 1 | Digest types: DigestRow and readNight signature | — | cursor · claude-opus-5.5 · default | 2026-10-29 |
+| 2 | Run log reader: readNight | #1 | cursor · claude-opus-5.5 · default | 2026-10-29 |
+| 3 | Digest page: GET /digest/:night | #1, #2 | cursor · claude-sonnet-5.5 · high | 2026-10-29 |
+| 4 | Digest JSON: GET /api/digest/:night | #1, #2 | cursor · claude-sonnet-5.5 · high | 2026-10-29 |
+| 5 | Status board links each night to its digest | #1, #2, #3 | cursor · claude-sonnet-5.5 · high | 2026-10-29 |
+| 6 | Route tests for digest page and JSON | #1, #3, #4 | cursor · claude-sonnet-5.5 · high | 2026-10-29 |
+| 7 | Preview for review | #3 | cursor · claude-opus-5.5 · default | 2026-10-29 |
+| 8 | Clean up: take the lane marker off the preview | #7 | cursor · claude-opus-5.5 · default | 2026-10-29 |
+
+#7 was first closed when the link was sent, before the reviewer looked; it was reopened and closed again once the review was in.
+The preview at https://rig-digest-preview-furtivespy.fly.dev/ was uploaded again without the lane marker on 2026-10-29 (banner: "no marker set").
